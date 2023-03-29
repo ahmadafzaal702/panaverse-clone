@@ -1,7 +1,7 @@
-import React from "react";
+import { FC } from "react";
 
-const Wrapper = ({ children }: { children: React.ReactNode }) => {
-  return <div className="max-w-screen-2xl mx-auto px-20"> {children}</div>;
+const Wrapper: FC<{ children: React.ReactNode }> = ({ children }) => {
+  return <div className="max-w-screen-xl mx-auto px-10"> {children}</div>;
 };
 
 export default Wrapper;

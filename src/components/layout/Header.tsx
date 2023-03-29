@@ -15,11 +15,11 @@ const Header = () => {
   return (
     <>
       <Wrapper>
-        <header className="bg-white sticky flex justify-between items-center py-3">
+        <header className="bg-white sticky flex top-0 justify-between items-center py-4">
           <div>
             <Image src={Logo} alt="Panaverse-logo" />
           </div>
-          <ul className="flex space-x-5 font-semibold">
+          <ul className="flex space-x-8 font-medium">
             <li>
               <Link href="/">Home</Link>
             </li>
