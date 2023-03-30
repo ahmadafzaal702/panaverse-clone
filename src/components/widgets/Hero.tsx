@@ -8,7 +8,7 @@ import HeroPoster from "@/assests/Hero-Poster.png";
 const Hero = () => {
   return (
     <>
-      <section className="bg-red-100 pb-3">
+      <section className="bg-slate-100 pb-3">
         <Wrapper>
           <div className="flex flex-col md:flex-row items-center">
             {/* left */}

@@ -1,10 +1,16 @@
 import { FC } from "react";
 
-const CoreQuarter: FC<{
+interface CoreProps {
   quarterName: string;
   quarterDescription: string;
   quarterNo: string;
-}> = ({ quarterName, quarterDescription, quarterNo }) => {
+}
+
+const CoreQuarter: FC<CoreProps> = ({
+  quarterName,
+  quarterDescription,
+  quarterNo,
+}) => {
   return (
     <>
       <div className="border rounded-md flex-1 px-8 py-12 relative flex flex-col justify-center">
