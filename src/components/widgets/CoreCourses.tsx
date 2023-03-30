@@ -3,6 +3,25 @@ import Wrapper from "@/components/shared/Wrapper";
 import Button from "@/components/shared/Button";
 import CoreQuarter from "@/components/shared/CoreQuarter";
 
+const CoreQuarterData = [
+  {
+    header: "Quarter I",
+    description: "CS-101: Object-Oriented Programming using TypeScript",
+    number: "1",
+  },
+  {
+    header: "Quarter II",
+    description:
+      "W2-201: Developing Planet-Scale Web 2.0 Serverless Cloud Cloud Apps and APIs using Next.js 13 and Cloud Development Kit (CDK) for Terraform",
+    number: "2",
+  },
+  {
+    header: "Quarter III",
+    description:
+      "$-101: Dollar Making Bootcamp - Full-Stack Template and API Product Development",
+    number: "3",
+  },
+];
 // FC component
 const CoreCourses = () => {
   const heading2 = "Core Courses \n(Common in All Specializations):";
@@ -28,30 +47,16 @@ const CoreCourses = () => {
           </div>
 
           {/* Boxes */}
-          <div className="mt-12 flex gap-5 flex-col md:flex-row">
-            <CoreQuarter
-              quarterName={"Quarter I"}
-              quarterDescription={
-                "CS-101: Object-Oriented Programming using TypeScript"
-              }
-              quarterNo={"1"}
-            />
-
-            <CoreQuarter
-              quarterName={"Quarter II "}
-              quarterDescription={
-                "W2-201: Developing Planet-Scale Web 2.0 Serverless Cloud Cloud Apps and APIs using Next.js 13 and Cloud Development Kit (CDK) for Terraform"
-              }
-              quarterNo={"2"}
-            />
-
-            <CoreQuarter
-              quarterName={"Quarter III"}
-              quarterDescription={
-                "$-101: Dollar Making Bootcamp - Full-Stack Template and API Product Development"
-              }
-              quarterNo={"3"}
-            />
+          <div className="mt-12 flex gap-x-6 gap-y-4 flex-col md:flex-row">
+            {CoreQuarterData.map((item) => {
+              return (
+                <CoreQuarter
+                  quarterName={item.header}
+                  quarterDescription={item.description}
+                  quarterNo={item.number}
+                />
+              );
+            })}
           </div>
         </Wrapper>
       </section>

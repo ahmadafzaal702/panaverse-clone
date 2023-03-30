@@ -7,10 +7,10 @@ const CoreQuarter: FC<{
 }> = ({ quarterName, quarterDescription, quarterNo }) => {
   return (
     <>
-      <div className="border rounded-md p-8 flex-1 relative">
+      <div className="border rounded-md flex-1 px-8 py-12 relative flex flex-col justify-center">
         <h4 className="text-lg font-bold">{quarterName}</h4>
         <p className="text-slate-600 mt-2">{quarterDescription}</p>
-        <span className="absolute top-0 right-10 text-9xl text-gray-200 font-bold -z-10">
+        <span className="absolute -top-3 right-10 text-[148px] text-gray-200 font-bold -z-10">
           {quarterNo}
         </span>
       </div>
