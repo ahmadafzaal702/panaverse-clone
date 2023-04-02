@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import { useState } from "react";
 
 import Image from "next/image";
 
@@ -8,6 +9,13 @@ import CoreQuarter from "@/components/shared/CoreQuarter";
 import { DataSpecializedTracks } from "./DataSpecializedTracks";
 
 const SpecializedTracks = () => {
+  const [selectedItem, setSelectedItem] = useState("wmd");
+
+  const filteredSTrackData = DataSpecializedTracks.find((item) => {
+    return item.slug === selectedItem;
+  });
+
+  // FC return
   return (
     <>
       <section className="mt-12 lg:mt-16">
@@ -24,21 +32,18 @@ const SpecializedTracks = () => {
           </div>
 
           {/* specialized track body */}
-          <div className="flex gap-x-4 gap-y-3 flex-col md:flex-row mt-5">
+          <div className="flex gap-x-4 gap-y-3 flex-col-reverse lg:flex-row mt-5">
             {/* content left */}
-            <div className="basis-8/12 border border-slate-300 rounded-xl shadow-lg px-7 py-8">
+
+            <div className="basis-8/12 sticky top-28 self-start border border-slate-300 rounded-xl shadow-lg px-7 py-8">
               <h4 className="text-primary font-semibold mb-3">
                 Specialized Program
               </h4>
               <h3 className="text-xl font-bold">
-                Web 3.0 (Blockchain) and Metaverse Specialization
+                {filteredSTrackData?.header}
               </h3>
               <p className="text-slate-600 mt-2 text-justify">
-                This Web 3.0 and Metaverse specialization focuses on developing
-                full-stack Web 3.0 and Metaverse experiences for the next
-                generation of the internet by specializing in building worlds
-                that merge the best of cutting-edge decentralized distributed
-                blockchains with 3D metaverse client experiences.
+                {filteredSTrackData?.description}
               </p>
               <button className="text-primary font-medium mt-3 flex gap-x-1 items-center">
                 Learn More
@@ -60,24 +65,17 @@ const SpecializedTracks = () => {
 
               {/* quarter boxes */}
 
-              <div className="mt-5 flex gap-x-6 gap-y-5">
-                <CoreQuarter
-                  quarterName={"Quarter IV"}
-                  quarterDescription={
-                    "W2-201: Developing Planet-Scale Web 2.0 Serverless Cloud Cloud Apps and APIs using Next.js 13 and Cloud Development Kit (CDK) for Terraform"
-                  }
-                  quarterNo={"4"}
-                  haveBorder={false}
-                />
-
-                <CoreQuarter
-                  quarterName={"Quarter V"}
-                  quarterDescription={
-                    "W2-201: Developing Planet-Scale Web 2.0 Serverless Cloud Cloud Apps and APIs using Next.js 13 and Cloud Development Kit (CDK) for Terraform"
-                  }
-                  quarterNo={"5"}
-                  haveBorder={false}
-                />
+              <div className="mt-5 flex flex-col sm:flex-row gap-x-6 gap-y-5">
+                {filteredSTrackData?.quarters.map((item) => {
+                  return (
+                    <CoreQuarter
+                      quarterName={item.header}
+                      quarterDescription={item.description}
+                      quarterNo={item.number}
+                      haveBorder={false}
+                    />
+                  );
+                })}
               </div>
             </div>
 
@@ -88,6 +86,9 @@ const SpecializedTracks = () => {
                   <div
                     className="flex gap-x-5 items-center mb-5 cursor-pointer"
                     key={i}
+                    onClick={() => {
+                      setSelectedItem(item.slug);
+                    }}
                   >
                     <div className="basis-4/12">
                       <Image

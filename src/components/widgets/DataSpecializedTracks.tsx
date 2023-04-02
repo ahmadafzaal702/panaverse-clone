@@ -6,7 +6,7 @@ import Ambient from "@/assests/ambient.png";
 
 export const DataSpecializedTracks = [
   {
-    slug: "wm",
+    slug: "wmd",
     header: "Web 3.0 (Blockchain) and Metaverse Specialization",
     image: Metaverse,
     description:
@@ -27,7 +27,7 @@ export const DataSpecializedTracks = [
     ],
   },
   {
-    key: 2,
+    slug: "ai",
     header: "Artificial Intelligence (AI) and Deep Learning Specialization",
     image: AI,
     description:
@@ -48,7 +48,7 @@ export const DataSpecializedTracks = [
   },
 
   {
-    key: 3,
+    slug: "cc",
     header: "Cloud-Native Computing Specialization",
     image: Cloud,
     description:
@@ -70,7 +70,7 @@ export const DataSpecializedTracks = [
   },
 
   {
-    key: 4,
+    slug: "ac",
     header: "Ambient Computing and IoT Specialization",
     image: Ambient,
     description:
