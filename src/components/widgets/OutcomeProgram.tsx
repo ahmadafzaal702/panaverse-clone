@@ -37,7 +37,7 @@ const OutcomeProgram = () => {
                 APIs that are marketed globally by the Panaverse DAO. You will
                 also have the opportunity to offer your services at a rate of
                 $50 per hour, providing a path to financial stability while
-                contributing to the growth of Pakistan's software exports.
+                contributing to the growth of Pakistans software exports.
               </p>
               {/* Icons */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-4 mt-5">
