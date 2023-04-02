@@ -8,6 +8,7 @@ import CoreQuarter from "@/components/shared/CoreQuarter";
 
 import { DataSpecializedTracks } from "./DataSpecializedTracks";
 
+// FC component
 const SpecializedTracks = () => {
   const [selectedItem, setSelectedItem] = useState("wmd");
 
