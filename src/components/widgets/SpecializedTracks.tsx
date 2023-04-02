@@ -8,6 +8,7 @@ import CoreQuarter from "@/components/shared/CoreQuarter";
 
 import { DataSpecializedTracks } from "./DataSpecializedTracks";
 
+// FC component
 const SpecializedTracks = () => {
   const [selectedItem, setSelectedItem] = useState("wmd");
 
@@ -66,9 +67,10 @@ const SpecializedTracks = () => {
               {/* quarter boxes */}
 
               <div className="mt-5 flex flex-col sm:flex-row gap-x-6 gap-y-5">
-                {filteredSTrackData?.quarters.map((item) => {
+                {filteredSTrackData?.quarters.map((item, i) => {
                   return (
                     <CoreQuarter
+                      key={i}
                       quarterName={item.header}
                       quarterDescription={item.description}
                       quarterNo={item.number}
