@@ -13,14 +13,14 @@ const Hero = () => {
           <div className="flex flex-col md:flex-row items-center">
             {/* left */}
             <div className="flex-1 max-w-xl">
-              <h4 className="text-teal-700 text-lg font-semibold mb-1">
+              <h4 className="text-teal-700 mt-10 sm:mt-0 text-lg font-medium sm:font-semibold mb-1">
                 Presidential Initiative for Artificial Intelligence and
                 Computing (PIAIC)
               </h4>
-              <h1 className="text-4xl sm:text-5xl font-bold">
+              <h1 className="text-2xl sm:text-5xl font-bold">
                 Certified Web 3.0 and Metaverse Developer
               </h1>
-              <p className="text-slate-600 mt-6">
+              <p className="text-slate-600 mt-3 sm:mt-6">
                 A One and Quarter Years Panaverse DAO Earn as you Learn Program
                 Getting Ready for the Next Generation of the Internet.
               </p>
