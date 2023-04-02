@@ -48,9 +48,10 @@ const CoreCourses = () => {
 
           {/* Boxes */}
           <div className="mt-12 flex gap-x-6 gap-y-4 flex-col md:flex-row">
-            {CoreQuarterData.map((item) => {
+            {CoreQuarterData.map((item, i) => {
               return (
                 <CoreQuarter
+                  key={i}
                   quarterName={item.header}
                   quarterDescription={item.description}
                   quarterNo={item.number}
